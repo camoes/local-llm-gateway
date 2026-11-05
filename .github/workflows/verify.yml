@@ -1,0 +1,38 @@
+name: verify
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Guard - sin datos de red reales
+        run: |
+          hits=$(grep -rInE '192\.168\.[0-9]+\.[0-9]+|(^|[^0-9.])10\.[0-9]+\.[0-9]+\.[0-9]+|172\.(1[6-9]|2[0-9]|3[01])\.[0-9]+\.[0-9]+|/Users/[a-z]+' . \
+                 --exclude-dir=.git --exclude-dir=.github | grep -vE '@example\.(com|org|net)|/Users/usuario' || true)
+          if [ -n "$hits" ]; then
+            echo "$hits"
+            echo "::error::el repo contiene IPs privadas o rutas personales"
+            exit 1
+          fi
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Compilar
+        run: python3 -m compileall -q modelgate.py agent_driver.py
+
+      - name: Tests
+        run: make test
+
+      - name: Politica local-only
+        run: python3 -m unittest tests.test_modelgate.TestPolicy -v

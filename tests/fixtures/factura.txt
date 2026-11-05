@@ -1,0 +1,10 @@
+FACTURA
+Servicios Ejemplo S.L.
+CIF: B12345678
+Numero: F-2026-0417
+Fecha: 14/10/2026
+
+Concepto: mantenimiento anual del sistema
+Base imponible: 240,00 EUR
+IVA 21%: 50,40 EUR
+Total: 290,40 EUR

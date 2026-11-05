@@ -1,0 +1,11 @@
+{
+  "_ayuda": "Fuentes que el modelo puede leer con fetch_source. Añade aqui una URL oficial y el modelo la consulta solo; no hay que copiarle cifras nunca mas.",
+  "somenergia-tarifas": {
+    "url": "https://www.somenergia.coop/es/tarifas-luz/domestico-periodos",
+    "desc": "Tarifas vigentes de Som Energia para 2.0TD domestico: precio EUR/kWh en punta, llano y valle, y EUR/kW ano en potencia."
+  },
+  "somenergia-historico": {
+    "url": "https://www.somenergia.coop/es/historico-tarifa-periodos",
+    "desc": "Historico de precios de la tarifa periodos de Som Energia."
+  }
+}

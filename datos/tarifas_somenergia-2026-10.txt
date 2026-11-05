@@ -1,0 +1,21 @@
+TARIFA SOM ENERGIA 2.0TD (hasta 15 kW) — precios válidos desde 1 de octubre de 2026
+Fuente: https://www.somenergia.coop/es/tarifas-luz/domestico-periodos
+
+PRECIOS DE ENERGIA
+  Punta : 0,249 EUR/kWh
+  Llano : 0,169 EUR/kWh
+  Valle : 0,150 EUR/kWh
+
+PRECIOS DE POTENCIA (por kW contratado y año)
+  Punta-Llano : 29,934 EUR/kW año
+  Valle       : 2,955 EUR/kW año
+
+NO INCLUIDO EN LOS PRECIOS DE ENERGIA
+  Servicios de Ajuste: 0,025 EUR/kWh (valor medio del último mes, fijado por REE)
+
+OTROS
+  Compensación de excedentes de autoproducción: 0,0300 EUR/kWh
+
+NOTA PARA EL MODELO: usa solo estas cifras. No hay otras tarifas de Som Energia
+en este documento; si la pregunta menciona una tarifa que no aparece aquí
+(1.0TD, 3.0TD, indexada, Generation kWh...), responde que no tienes sus precios.

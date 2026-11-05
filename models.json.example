@@ -1,0 +1,40 @@
+{
+  "default_profile": "local",
+  "profiles": {
+    "local": {
+      "kind": "openai",
+      "transport": "ssh-tunnel",
+      "host": "equipo",
+      "remote_host": "127.0.0.1",
+      "remote_port": 8080,
+      "local_port": 18080,
+      "model": "gpt-oss-20b",
+      "sensitivity": "local-only",
+      "api_key": {
+        "source": "ssh-file",
+        "host": "equipo",
+        "path": "C:\\Users\\<usuario>\\.llama\\api.key"
+      },
+      "defaults": {
+        "temperature": 0.1,
+        "max_tokens": 1024,
+        "system": "Responde en español, de forma concisa.",
+        "extra_body": {
+          "reasoning_effort": "low"
+        }
+      },
+      "lifecycle": {
+        "auto_stop": true,
+        "task": "llama-server",
+        "wake": true,
+        "shutdown": "if_woken"
+      }
+    },
+    "cloud": {
+      "kind": "hermes",
+      "provider": "opencode-go",
+      "model": "deepseek-v4.1-flash",
+      "sensitivity": "cloud-ok"
+    }
+  }
+}
